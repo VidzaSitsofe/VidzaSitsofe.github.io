@@ -141,32 +141,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Count animation for stats (optional - can be added to HTML if needed)
-function animateCounter(element, target, duration = 2000) {
-    let current = 0;
-    const increment = target / (duration / 16);
-    
-    const counter = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-            element.textContent = target + '+';
-            clearInterval(counter);
-        } else {
-            element.textContent = Math.floor(current) + '+';
-        }
-    }, 16);
-}
-
-// Portfolio card click animation
-document.querySelectorAll('.portfolio-card').forEach(card => {
-    card.addEventListener('click', function() {
-        this.style.animation = 'none';
-        setTimeout(() => {
-            this.style.animation = '';
-        }, 10);
-    });
-});
-
 // Typing animation for hero title
 function typeWriter(element, text, speed = 100) {
     let index = 0;
